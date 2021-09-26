@@ -41,22 +41,22 @@ module.exports = merge(common, {
       },
     }),
   ],
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      cacheGroups: {
-        defaultVendors: {
-          test: /[\\/]node_modules[\\/]/,
-          filename: 'js/[name].[chunkhash].vendor.js',
-          priority: -10,
-          reuseExistingChunk: true,
-        },
-        default: {
-          filename: 'js/[name].[chunkhash].chunk.js',
-          priority: -20,
-          reuseExistingChunk: true,
-        },
-      },
-    },
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  //     cacheGroups: {
+  //       defaultVendors: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         filename: 'js/[name].[chunkhash].vendor.js',
+  //         priority: -10,
+  //         reuseExistingChunk: true,
+  //       },
+  //       default: {
+  //         filename: 'js/[name].[chunkhash].chunk.js',
+  //         priority: -20,
+  //         reuseExistingChunk: true,
+  //       },
+  //     },
+  //   },
+  // },
 })
