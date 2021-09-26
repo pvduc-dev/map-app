@@ -19,7 +19,7 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
-      name: 'map_app',
+      name: 'map',
       filename: 'js/remoteEntry.js',
       exposes: {
         './Routes': './src/components/routes',
