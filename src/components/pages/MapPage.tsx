@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -15,7 +15,7 @@ const MapPage = () => {
   })
   return (
     <Map
-      style="mapbox://styles/mapbox/streets-v11"
+      style="mapbox://styles/mapbox/light-v9"
       containerStyle={{
         height: '100%',
         width: '100%'
@@ -28,4 +28,4 @@ const MapPage = () => {
   )
 };
 
-export default MapPage;
+export default memo(MapPage);
