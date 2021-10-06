@@ -17,8 +17,8 @@ const MapPage = () => {
     <Map
       style="mapbox://styles/mapbox/streets-v11"
       containerStyle={{
-        height: '100vh',
-        width: '100vw'
+        height: '100%',
+        width: '100%'
       }}
     >
       <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
