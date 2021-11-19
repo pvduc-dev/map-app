@@ -12,7 +12,11 @@ module.exports = merge(common, {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'app_shell',
+      name: 'map',
+      filename: 'js/remoteEntry.js',
+      exposes: {
+        './Routes': './src/components/routes',
+      },
       shared: {
         react: {
           singleton: true,

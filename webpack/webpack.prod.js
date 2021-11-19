@@ -16,6 +16,11 @@ module.exports = merge(common, {
     filename: 'js/[name].[chunkhash].bundle.js',
     publicPath: `${process.env.URL}/`,
   },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    'react-router': 'ReactRouter'
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
@@ -41,22 +46,22 @@ module.exports = merge(common, {
       },
     }),
   ],
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     cacheGroups: {
-  //       defaultVendors: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         filename: 'js/[name].[chunkhash].vendor.js',
-  //         priority: -10,
-  //         reuseExistingChunk: true,
-  //       },
-  //       default: {
-  //         filename: 'js/[name].[chunkhash].chunk.js',
-  //         priority: -20,
-  //         reuseExistingChunk: true,
-  //       },
-  //     },
-  //   },
-  // },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          filename: 'js/[name].[chunkhash].vendor.js',
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          filename: 'js/[name].[chunkhash].chunk.js',
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
 })

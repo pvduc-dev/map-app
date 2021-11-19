@@ -1,6 +1,7 @@
-import React, {memo, useState} from 'react';
+import React, {FC, memo, useEffect, useState} from 'react';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import get from 'lodash/debounce';
 
 interface UrlParams {
   latitude?: string;
@@ -8,14 +9,13 @@ interface UrlParams {
 }
 
 const MapPage = () => {
-  const mapboxAccessToken = 'pk.eyJ1IjoicHZkdWMtZGV2IiwiYSI6ImNrOHlid2lkdDFnZnUzam52cGFwOHBqcGMifQ.PFeqdmk4RuusDS3GruLvEA';
   const Map = ReactMapboxGl({
     accessToken: "pk.eyJ1IjoicHZkdWMtZGV2IiwiYSI6ImNrOHlid2lkdDFnZnUzam52cGFwOHBqcGMifQ.PFeqdmk4RuusDS3GruLvEA",
     logoPosition: 'top-left'
   })
   return (
     <Map
-      style="mapbox://styles/mapbox/light-v9"
+      style="mapbox://styles/mapbox/dark-v9"
       containerStyle={{
         height: '100%',
         width: '100%'

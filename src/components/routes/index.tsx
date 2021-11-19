@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FC} from "react";
 import { Route, useRouteMatch } from 'react-router-dom';
 import MapPage from "../pages/MapPage";
 
