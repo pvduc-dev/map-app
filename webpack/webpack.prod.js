@@ -25,7 +25,6 @@ module.exports = merge(common, {
         './Routes': './src/components/routes',
       },
       shared: {
-        ...dependencies,
         react: {
           singleton: true,
           requiredVersion: dependencies['react'],
