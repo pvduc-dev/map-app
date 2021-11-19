@@ -16,11 +16,6 @@ module.exports = merge(common, {
     filename: 'js/[name].[chunkhash].bundle.js',
     publicPath: `${process.env.URL}/`,
   },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'react-router': 'ReactRouter'
-  },
   plugins: [
     new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
