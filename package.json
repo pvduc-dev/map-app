@@ -41,11 +41,12 @@
     "@tanem/react-nprogress": "^3.0.79",
     "lodash": "^4.17.21",
     "mapbox-gl": "^2.4.1",
+    "mini-css-extract-plugin": "^2.4.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-router-dom": "5.3.0",
     "react-map-gl": "^6.1.17",
     "react-mapbox-gl": "^5.1.1",
+    "react-router-dom": "5.3.0",
     "yup": "^0.32.11"
   }
 }
