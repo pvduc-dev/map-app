@@ -9,6 +9,7 @@ module.exports = merge(common, {
   devServer: {
     port: 5001,
     historyApiFallback: true,
+    // compress: false,
   },
   plugins: [
     new ModuleFederationPlugin({

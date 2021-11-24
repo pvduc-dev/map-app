@@ -27,15 +27,34 @@ module.exports = {
       },
       {
         test: /\.css$/i,
+        include: /node_modules/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-          // MiniCssExtractPlugin.loader, 'css-loader',
           },
           {
             loader: "css-loader",
             options: {
-              modules: true,
+              modules: false,
+            }
+          }
+        ],
+      },
+      {
+        test: /\.css$/i,
+        include: /src/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentHashFunction: "xxhash64",
+                localIdentHashDigestLength: 8,
+                localIdentHashSalt: "map-app",
+              },
             }
           }
         ],

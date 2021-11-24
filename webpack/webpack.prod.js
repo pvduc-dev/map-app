@@ -15,6 +15,8 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, '..', 'dist'),
     filename: 'js/[name].[chunkhash].bundle.js',
     publicPath: `${process.env.URL}/`,
+    hashFunction: 'xxhash64',
+    hashDigestLength: 8,
   },
   plugins: [
     new CleanWebpackPlugin(),

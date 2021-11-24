@@ -4,7 +4,8 @@ import MapPage from "../pages/MapPage";
 import '../../style/index.css';
 
 const Routes = () => {
-  const {path} = useRouteMatch()
+  const { path } = useRouteMatch();
+
   return (
     <>
       <Route
