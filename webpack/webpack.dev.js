@@ -16,7 +16,6 @@ module.exports = merge(common, {
       filename: 'js/remoteEntry.js',
       exposes: {
         './Routes': './src/components/routes',
-        './Stylesheet': './src/style/index.css',
       },
       shared: {
         react: {
