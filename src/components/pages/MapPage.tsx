@@ -1,7 +1,8 @@
 import React, {FC, memo, useEffect, useState} from 'react';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import get from 'lodash/debounce';
+import {Product} from "../../models/product";
+import {plainToClass} from "class-transformer";
 
 interface UrlParams {
   latitude?: string;
@@ -9,6 +10,12 @@ interface UrlParams {
 }
 
 const MapPage = () => {
+  useEffect(() => {
+    console.log(plainToClass(Product, {
+      firstName: 'Pv',
+      lastName: 'Duc'
+    }))
+  })
   const Map = ReactMapboxGl({
     accessToken: "pk.eyJ1IjoicHZkdWMtZGV2IiwiYSI6ImNrOHlid2lkdDFnZnUzam52cGFwOHBqcGMifQ.PFeqdmk4RuusDS3GruLvEA",
     logoPosition: 'top-left'
