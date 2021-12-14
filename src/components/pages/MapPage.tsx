@@ -3,6 +3,7 @@ import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {Product} from "../../models/product";
 import {plainToClass} from "class-transformer";
+import {validateSync} from "class-validator";
 
 interface UrlParams {
   latitude?: string;
@@ -11,10 +12,10 @@ interface UrlParams {
 
 const MapPage = () => {
   useEffect(() => {
-    console.log(plainToClass(Product, {
+    console.log(validateSync(plainToClass(Product, {
       firstName: 'Pv',
       lastName: 'Duc'
-    }))
+    })))
   })
   const Map = ReactMapboxGl({
     accessToken: "pk.eyJ1IjoicHZkdWMtZGV2IiwiYSI6ImNrOHlid2lkdDFnZnUzam52cGFwOHBqcGMifQ.PFeqdmk4RuusDS3GruLvEA",
