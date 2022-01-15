@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge');
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const { DefinePlugin } = require('webpack');
 const dotenv = require('dotenv');
 
 dotenv.config()
@@ -13,10 +14,13 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
-    filename: 'js/[name].[chunkhash].bundle.js',
-    publicPath: `${process.env.URL}/`,
+    filename: `js/[name].[contenthash:8].bundle.js`,
+    publicPath: process.env.PUBLIC_PATH ?? '/',
   },
   plugins: [
+    new DefinePlugin({
+      'process.env': JSON.stringify(process.env)
+    }),
     new CleanWebpackPlugin(),
     new ModuleFederationPlugin({
       name: 'map',
@@ -41,22 +45,22 @@ module.exports = merge(common, {
       },
     }),
   ],
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     cacheGroups: {
-  //       defaultVendors: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         filename: 'js/[name].[chunkhash].vendor.js',
-  //         priority: -10,
-  //         reuseExistingChunk: true,
-  //       },
-  //       default: {
-  //         filename: 'js/[name].[chunkhash].chunk.js',
-  //         priority: -20,
-  //         reuseExistingChunk: true,
-  //       },
-  //     },
-  //   },
-  // },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          filename: 'js/[name].[contenthash:8].vendor.js',
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          filename: 'js/[name].[contenthash:8].chunk.js',
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
 })
