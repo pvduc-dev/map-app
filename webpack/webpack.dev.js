@@ -2,7 +2,9 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 const {dependencies} = require("../package.json");
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const path = require("path");
+const { DefinePlugin } = require('webpack');
+
+dotenv.config()
 
 module.exports = merge(common, {
   mode: 'development',
@@ -11,6 +13,9 @@ module.exports = merge(common, {
     historyApiFallback: true,
   },
   plugins: [
+    new DefinePlugin({
+      "process.env": JSON.stringify(process.env)
+    }),
     new ModuleFederationPlugin({
       name: 'app_shell',
       shared: {

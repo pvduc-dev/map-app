@@ -1,6 +1,7 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import { Route, useRouteMatch } from 'react-router-dom';
-import MapPage from "../pages/MapPage";
+
+const MapPage = lazy(() => import('../pages/MapPage'))
 
 const Routes = () => {
   const {path} = useRouteMatch()
@@ -10,7 +11,9 @@ const Routes = () => {
         path={path}
         exact
       >
-        <MapPage/>
+        <Suspense fallback={<></>}>
+          <MapPage/>
+        </Suspense>
       </Route>
     </>
   )
