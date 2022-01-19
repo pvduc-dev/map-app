@@ -11,10 +11,32 @@ interface UrlParams {
   longitude?: string;
 }
 
+const style = {
+  'version': 8,
+  'sources': {
+    'raster-tiles': {
+      'type': 'raster',
+      'tiles': [
+        'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}'
+      ],
+      'tileSize': 256,
+    }
+  },
+  'layers': [
+    {
+      'id': 'simple-tiles',
+      'type': 'raster',
+      'source': 'raster-tiles',
+      'minzoom': 0,
+      'maxzoom': 24
+    }
+  ]
+}
+
 const MapPage = () => {
   const Map = ReactMapboxGl({
     accessToken: process.env.MAPBOX_ACCESS_TOKEN as string,
-    logoPosition: 'top-left',
+    logoPosition: 'top-right',
   })
   useEffect(() => {
     const intervalSub = interval(10000).pipe(
@@ -710,7 +732,8 @@ const MapPage = () => {
   };
   return (
     <Map
-      style="mapbox://styles/mapbox/dark-v10"
+      // @ts-ignore
+      style={style}
       center={[
         105.83977460861206,
         20.984921876135513
