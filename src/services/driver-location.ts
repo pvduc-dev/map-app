@@ -1,6 +1,4 @@
-import { ajax } from "rxjs/ajax";
 import {interval, map, of} from "rxjs";
-import { random } from "lodash-es";
 
 export const getLocation = of({
   "name": "iss",

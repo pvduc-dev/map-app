@@ -1,8 +1,8 @@
-const { merge } = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const common = require('./webpack.common');
 const {dependencies} = require("../package.json");
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const { DefinePlugin } = require('webpack');
+const {DefinePlugin} = require('webpack');
 const dotenv = require("dotenv");
 
 dotenv.config()

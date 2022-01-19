@@ -1,1 +1,1 @@
-export { default as Snow } from './Snow'
+export {default as Snow} from './Snow'

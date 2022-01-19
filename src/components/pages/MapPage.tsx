@@ -1,10 +1,10 @@
-import React, {memo, useEffect, useState} from 'react';
-import ReactMapboxGl, { Layer, Feature, GeoJSONLayer, MapContext } from 'react-mapbox-gl';
-import {AnySourceData, Map} from 'mapbox-gl';
+import React, {memo, useEffect} from 'react';
+import ReactMapboxGl from 'react-mapbox-gl';
+import {Map} from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import {getLocation, getLocationV2} from "../../services/driver-location";
-import { interval, map, skip, switchMap} from "rxjs";
-import { random } from "lodash-es";
+import {getLocation} from "../../services/driver-location";
+import {interval, map, skip, switchMap} from "rxjs";
+import {random} from "lodash-es";
 
 interface UrlParams {
   latitude?: string;
