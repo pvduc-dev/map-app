@@ -1,6 +1,6 @@
 import React, {memo, MutableRefObject, useEffect, useRef} from 'react';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import {Map as Mapbox} from 'mapbox-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
+import {Map as Mapbox} from 'maplibre-gl';
 
 interface UrlParams {
   latitude?: string;
@@ -13,7 +13,6 @@ const MapPage = () => {
   useEffect(() => {
     try {
       map.current = new Mapbox({
-        accessToken: process.env.MAPBOX_ACCESS_TOKEN,
         container: mapContainer.current as HTMLDivElement,
         style: {
           'version': 8,
@@ -38,8 +37,8 @@ const MapPage = () => {
         },
         zoom: 12,
         center: [
-          105.93978881835936,
-          21.124536886064668
+          105.84241390228271,
+          21.01112468403104
         ]
       })
     } catch (e) {
