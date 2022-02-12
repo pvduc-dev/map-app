@@ -1,6 +1,6 @@
 import React from "react";
 import {Route, useRouteMatch} from 'react-router-dom';
-import MapPage from "../pages/MapPage";
+import MapPage from "../../pages/MapPage";
 
 const Routes = () => {
   const {path} = useRouteMatch()
