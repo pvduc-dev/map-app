@@ -22,13 +22,13 @@ const MapPage = () => {
 
   useEffect(() => {
     map?.once('load', () => {
+      setIsDrawerVisible(true);
       map?.addControl(new NavigationControl({
       }), 'bottom-right')
     })
   })
 
   function handleHidePanel() {
-    debugger
     setIsDrawerVisible(false)
   }
 
