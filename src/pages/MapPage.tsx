@@ -1,6 +1,6 @@
 import React, {memo, useEffect, useRef} from 'react';
 import {useMapbox} from "../hooks/useMapbox";
-import '../style/index.css';
+import MapDrawer from "../components/organisms/MapDrawer";
 
 const MapPage = () => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -9,9 +9,16 @@ const MapPage = () => {
   })
   return (
     <div
-      style={{width: '100%', height: '100%'}}
-      ref={mapContainerRef}
-    />
+      className="flex h-full relative"
+    >
+      <MapDrawer
+        isVisible
+      />
+      <div
+        className="w-full h-full z-10"
+        ref={mapContainerRef}
+      />
+    </div>
   )
 };
 
