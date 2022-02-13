@@ -20,7 +20,7 @@ const VehicleStatusBox: FC<VehicleStatusBoxProps> = ({isLoading}) => {
           </div>
         </div>
       ) : (
-        <div className="w-full border rounded-md px-2 py-1 text-sm font-medium">
+        <div className="w-full border rounded-md px-2 py-1 text-sm font-medium cursor-progress">
           <ContentLoader
             title=""
             speed={3}

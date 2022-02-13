@@ -7,8 +7,9 @@ interface VehicleListItemProps {
 
 const VehicleListItem: FC<VehicleListItemProps> = () => {
   return (
-    <div className="w-full">
+    <div className="w-full cursor-progress">
       <ContentLoader
+        title=""
         speed={4}
         width={394}
         height={62}
