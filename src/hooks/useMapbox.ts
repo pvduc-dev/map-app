@@ -1,6 +1,6 @@
 import {Map, MapOptions, StyleSpecification} from 'maplibre-gl';
 import {RefObject, useEffect, useState} from "react";
-import 'maplibre-gl/dist/maplibre-gl.css';
+import '../style/mapbox.css';
 
 type useMapboxType = (
   ref: RefObject<HTMLDivElement>,

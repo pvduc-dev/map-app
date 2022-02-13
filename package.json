@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
+    "@svgr/webpack": "^6.2.1",
     "@tanem/react-nprogress": "^3.0.79",
     "@types/lodash-es": "^4.17.5",
     "@types/mapbox-gl": "^2.6.0",
