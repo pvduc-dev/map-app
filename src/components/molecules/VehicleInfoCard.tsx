@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import Divider from "../atoms/Divider";
-import Draggable from 'react-draggable';
+import Draggable, {DraggableEventHandler} from 'react-draggable';
 
 interface VehicleInfoCardProps {
 
@@ -10,19 +10,33 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
   return (
     <Draggable
       positionOffset={{x: '-50%', y: '-50%'}}
-      cancel='body'
+      bounds={{
+        top: -(window.innerHeight - 440) / 2,
+        left: -(window.innerWidth - 460) / 2,
+        right: (window.innerWidth - 460) / 2,
+        bottom: (window.innerHeight - 442) / 2
+      }}
     >
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] bg-[#0F0D1E] z-40 rounded-md"
       >
-        <div className="p-4 text-gray-100 font-medium">
-          Thông tin xe
+        <div className="p-4">
+          <div
+            className="text-gray-100 font-medium"
+          >
+            Thông tin xe
+          </div>
         </div>
         <Divider/>
         <div className="px-4 py-2 text-gray-300 text-sm h-96 overflow-y-auto">
           <div className="py-3 px-0.5 flex">
             <span>Lái xe</span>
             <span className="ml-auto">Phan Văn Đức</span>
+          </div>
+          <Divider/>
+          <div className="py-3 px-0.5 flex">
+            <span>Biển số</span>
+            <span className="ml-auto">37E1-66394</span>
           </div>
           <Divider/>
           <div className="py-3 px-0.5 flex">

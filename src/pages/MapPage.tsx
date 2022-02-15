@@ -11,7 +11,9 @@ const MapPage = () => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const map = useMapbox(mapContainerRef);
 
-  const { notify, dismissAll } = useNotifier();
+  map?.once('load', () => {
+    setIsDrawerVisible(true)
+  })
 
   function handleHidePanel() {
     setIsDrawerVisible(false)
