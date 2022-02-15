@@ -20,18 +20,18 @@ const VehicleStatusBox: FC<VehicleStatusBoxProps> = ({isLoading}) => {
           </div>
         </div>
       ) : (
-        <div className="w-full border rounded-md px-2 py-1 text-sm font-medium cursor-progress">
+        <div className="w-full border border-[#65617C] rounded-md px-2 py-1 text-sm font-medium cursor-progress">
           <ContentLoader
             title=""
             speed={3}
             width={124}
             height={54}
             viewBox="0 0 124 54"
-            backgroundColor="#f3f3f3"
-            foregroundColor="#e3e3e3"
+            backgroundColor="#65617C"
+            foregroundColor="#0F0D1E"
           >
             <rect x="2" y="8" rx="6" ry="6" width="46" height="12" />
-            <circle cx="80" cy="28" r="20" />
+            <circle cx="82" cy="28" r="20" />
             <circle cx="12" cy="36" r="10" />
           </ContentLoader>
         </div>

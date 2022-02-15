@@ -14,8 +14,8 @@ const VehicleListItem: FC<VehicleListItemProps> = () => {
         width={394}
         height={62}
         viewBox="0 0 394 62"
-        backgroundColor="#f3f3f3"
-        foregroundColor="#e3e3e3"
+        backgroundColor="#65617C"
+        foregroundColor="#0F0D1E"
       >
         <circle cx="22" cy="22" r="22" />
         <rect x="54" y="4" rx="6" ry="6" width="160" height="12" />

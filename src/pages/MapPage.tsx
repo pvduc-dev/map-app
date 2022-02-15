@@ -4,6 +4,7 @@ import MapDrawer from "../components/organisms/MapDrawer";
 import {GeolocateControl, NavigationControl} from 'maplibre-gl';
 import Taxi from '../assets/icons/taxi.svg';
 import { useNotifier } from 'react-headless-notifier';
+import VehicleInfoCard from "../components/molecules/VehicleInfoCard";
 
 const MapPage = () => {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
@@ -53,6 +54,7 @@ const MapPage = () => {
         isVisible={isDrawerVisible}
         onHide={handleHidePanel}
       />
+      <VehicleInfoCard/>
     </>
 
   )

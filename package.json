@@ -54,6 +54,7 @@
     "react": "^17.0.1",
     "react-content-loader": "^6.1.0",
     "react-dom": "^17.0.1",
+    "react-draggable": "^4.4.4",
     "react-headless-notifier": "^0.1.6",
     "react-router-dom": "^5.3.0",
     "react-spring": "^9.4.3",
