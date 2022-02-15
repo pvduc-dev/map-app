@@ -1,12 +1,23 @@
-import React, {FC, useRef} from 'react';
+import React, {FC, useEffect, useRef, useState} from 'react';
 import Divider from "../atoms/Divider";
 import Draggable, {DraggableEventHandler} from 'react-draggable';
+import {interval} from "rxjs";
 
 interface VehicleInfoCardProps {
 
 }
 
 const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
+  const [nub, setNub] = useState(0);
+
+  useEffect(() => {
+    const sub = interval(1000).subscribe((next) => {
+      setNub(next)
+    })
+    return () => {
+      sub.unsubscribe();
+    }
+  }, [])
   return (
     <Draggable
       positionOffset={{x: '-50%', y: '-50%'}}
@@ -46,13 +57,13 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
           </div>
           <Divider/>
           <div className="py-3 px-1 flex">
-            <span>Cập nhật lần cuối</span>
+            <span>Cập nhật lần cuối cùng</span>
             <span className="ml-auto">5 phút trước</span>
           </div>
           <Divider/>
           <div className="py-3 px-1 flex">
             <span>Vận tốc</span>
-            <span className="ml-auto">33/60</span>
+            <span className="ml-auto">{nub}/60 (km/h)</span>
           </div>
           <Divider/>
           <div className="py-3 px-0.5 flex">
