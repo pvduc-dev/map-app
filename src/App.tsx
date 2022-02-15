@@ -14,7 +14,7 @@ ReactDOM.render(
     }}
   >
     <div
-      className="w-full h-screen"
+      className="relative w-full h-screen overflow-x-hidden"
     >
       <Router>
         <Switch>

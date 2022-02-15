@@ -10,6 +10,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
   return (
     <Draggable
       positionOffset={{x: '-50%', y: '-50%'}}
+      cancel='body'
     >
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] bg-[#0F0D1E] z-40 rounded-md"
