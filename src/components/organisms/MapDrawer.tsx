@@ -3,6 +3,9 @@ import VehicleStatusBox from "../molecules/VehicleStatusBox";
 import VehicleListItem from "../molecules/VehicleListItem";
 import Left from '../../assets/icons/left.svg';
 import {useSpring, animated} from "react-spring";
+import { useNotifier } from 'react-headless-notifier';
+import SuccessNotification from "./SuccessNotification";
+import Cross from '../../assets/icons/cross.svg';
 
 interface MapDrawerProps {
   isVisible?: boolean;
@@ -10,9 +13,10 @@ interface MapDrawerProps {
 }
 
 const MapDrawer: FC<MapDrawerProps> = ({isVisible, onHide}) => {
+  const { notify } = useNotifier();
   const styles = useSpring({
     config: {
-      duration: 300
+      duration: 200
     },
     left: isVisible ? 0 : -450,
   });
@@ -20,24 +24,24 @@ const MapDrawer: FC<MapDrawerProps> = ({isVisible, onHide}) => {
   return (
     <animated.div
       style={styles}
-      className="absolute z-30 w-full lg:w-[420px] h-full top-0 left-0 p-1.5"
+      className="absolute z-30 w-full lg:w-[442px] h-full top-0 left-0 p-1.5"
     >
-      <div className="h-full bg-white rounded-lg p-4">
-        <div
-          onClick={() => {onHide()}}
-          className="absolute right-[-6px] top-[212px] rounded-full bg-white p-0.5 cursor-pointer border-gray-400 border"
-        >
-          <Left
-            fill="#333"
-            width={18}
-            height={18}
-          />
-        </div>
+      <div className="h-full bg-white rounded-lg cursor-pointer">
         <div>
-          <p className="font-bold mb-4 ml-0.5">
-            All (12 drivers)
-          </p>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="px-4 pt-4 pb-2.5 font-medium ml-0.5 flex items-center">
+            <span>Danh sách xe</span>
+            <div
+              className="ml-auto p-1"
+              onClick={() => {onHide()}}
+            >
+              <Cross
+                height={10}
+                width={10}
+              />
+            </div>
+          </div>
+          <hr className="border-b border-gray-300 border-b border-0 border-black border-opacity-10"/>
+          <div className="grid grid-cols-3 gap-3 px-4 py-3">
             <VehicleStatusBox/>
             <VehicleStatusBox/>
             <VehicleStatusBox/>
@@ -46,10 +50,7 @@ const MapDrawer: FC<MapDrawerProps> = ({isVisible, onHide}) => {
             <VehicleStatusBox/>
           </div>
         </div>
-        <div className="mt-4">
-          <p className="font-bold mb-4">
-            Danh sách xe
-          </p>
+        <div className="mx-4 my-3">
           <div className="w-full">
             <VehicleListItem/>
             <VehicleListItem/>

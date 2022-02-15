@@ -21,7 +21,7 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
       rasterTile: {
         type: 'raster',
         tiles: [
-          'https://mt.google.com/vt/lyrs=m&x={x}&y={y}&z={z}'
+          'https://mt.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
         ],
         tileSize: 256,
       }

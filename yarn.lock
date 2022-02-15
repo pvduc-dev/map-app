@@ -6488,6 +6488,11 @@ react-group@^3.0.2:
   dependencies:
     prop-types "^15.7.2"
 
+react-headless-notifier@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/react-headless-notifier/-/react-headless-notifier-0.1.6.tgz#757ddfd33a26ed10276846240be1ea5f0b4c0f9c"
+  integrity sha512-idgAYF2AYW8cZN9cfaPvSUyeUrGyLoOT5RyKj77MQ1S/zCIv73Wajgp3fVxJkA2exBxGiQbo8Ng/p8ZnQUz3wg==
+
 react-icons@^3.8.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.11.0.tgz#2ca2903dfab8268ca18ebd8cc2e879921ec3b254"

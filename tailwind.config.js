@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      'sans': ['Mulish']
+      'sans': ['Helvetica Neue']
     },
   },
   plugins: [],
