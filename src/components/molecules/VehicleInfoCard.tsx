@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useRef} from 'react';
 import Divider from "../atoms/Divider";
 import Draggable, {DraggableEventHandler} from 'react-draggable';
 
@@ -16,11 +16,12 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
         right: (window.innerWidth - 460) / 2,
         bottom: (window.innerHeight - 442) / 2
       }}
+      cancel='#content'
     >
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] bg-[#0F0D1E] z-40 rounded-md"
       >
-        <div className="p-4">
+        <div className="p-4 cursor-move">
           <div
             className="text-gray-100 font-medium"
           >
@@ -28,7 +29,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
           </div>
         </div>
         <Divider/>
-        <div className="px-4 py-2 text-gray-300 text-sm h-96 overflow-y-auto">
+        <div id="content" className="px-4 py-2 text-gray-300 text-sm h-96 overflow-y-auto">
           <div className="py-3 px-0.5 flex">
             <span>Lái xe</span>
             <span className="ml-auto">Phan Văn Đức</span>
