@@ -45,4 +45,27 @@
     background: rgba(150, 150, 150, 0.9);
   }
 
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url("https://res.cloudinary.com/pv-duc/raw/upload/v1645010952/fonts/Helvetica/HelveticaNeue-Medium.otf") format('opentype');
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url("https://res.cloudinary.com/pv-duc/raw/upload/v1645010952/fonts/Helvetica/HelveticaNeue-Bold.otf") format('opentype');
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url("https://res.cloudinary.com/pv-duc/raw/upload/v1645010952/fonts/Helvetica/HelveticaNeue.otf") format('opentype');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url("https://res.cloudinary.com/pv-duc/raw/upload/v1645010952/fonts/Helvetica/HelveticaNeue-Light.otf") format('opentype');
+    font-weight: 300;
+  }
 }
