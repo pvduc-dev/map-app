@@ -13,6 +13,8 @@ const MapPage = () => {
 
   map?.once('load', () => {
     setIsDrawerVisible(true)
+    map?.addControl(new GeolocateControl({
+    }), 'bottom-right');
   })
 
   function handleHidePanel() {
