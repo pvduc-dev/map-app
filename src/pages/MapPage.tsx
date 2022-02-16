@@ -28,12 +28,6 @@ const MapPage = () => {
   return (
     <>
       <div
-        className="absolute w-10 h-10 top-4 left-4 z-20 bg-white rounded-full flex justify-center items-center cursor-pointer"
-        onClick={handleShowPanel}
-      >
-        <Taxi width={18} height={18}/>
-      </div>
-      <div
         className="absolute bottom-4 mx-auto left-1/2 -translate-x-1/2 bg-white z-20 rounded-md px-3 py-4 flex"
       >
         <div
@@ -58,7 +52,7 @@ const MapPage = () => {
         isVisible={isDrawerVisible}
         onHide={handleHidePanel}
       />
-      {/*<VehicleInfoCard/>*/}
+      <VehicleInfoCard/>
     </>
 
   )
