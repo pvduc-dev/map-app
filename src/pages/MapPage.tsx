@@ -28,17 +28,9 @@ const MapPage = () => {
   return (
     <>
       <div
-        className="absolute bottom-4 mx-auto left-1/2 -translate-x-1/2 bg-white z-20 rounded-md px-3 py-4 flex"
+        className="absolute w-10 h-10 top-4 left-4 z-20 bg-white rounded-full flex justify-center items-center cursor-pointer"
+        onClick={handleShowPanel}
       >
-        <div
-          className="flex flex-col items-center mx-4"
-        >
-          <Taxi
-            fill="#445CF9"
-            width={24}
-            height={24}
-          />
-        </div>
       </div>
       <div
         className="flex h-full"
