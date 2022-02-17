@@ -87,7 +87,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
             <div
               className="ml-auto"
             >
-              <StatusLight>Không hoạt động</StatusLight>
+              <StatusLight>Đang hoạt động</StatusLight>
             </div>
           </div>
           <Divider/>
@@ -96,7 +96,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
             <div
               className="ml-auto"
             >
-              <StatusLight>Không hoạt động</StatusLight>
+              <StatusLight>Đang hoạt động</StatusLight>
             </div>
           </div>
           <Divider/>
@@ -105,7 +105,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
             <div
               className="ml-auto"
             >
-              <StatusLight>Không hoạt động</StatusLight>
+              <StatusLight>Đang hoạt động</StatusLight>
             </div>
           </div>
           <Divider/>
