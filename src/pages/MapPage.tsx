@@ -36,7 +36,7 @@ const MapPage = () => {
       >
       </div>
       <div
-        className="absolute w-[32rem] rounded-md h-[28rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-[#0F0D1E] py-4"
+        className="absolute w-[32rem] rounded-md h-[26.8rem] top-1/3 left-1/2 -translate-x-1/3 -translate-y-1/2 z-50 bg-[#0F0D1E] py-4"
       >
         <div
           className="mb-3 relative"
@@ -125,7 +125,6 @@ const MapPage = () => {
           />
           <p className="ml-8">Đường giải phóng</p>
         </div>
-        <Divider/>
       </div>
       <div
         className="flex h-full"
