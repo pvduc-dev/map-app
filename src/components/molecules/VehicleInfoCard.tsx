@@ -2,6 +2,7 @@ import React, {FC, useEffect, useRef, useState} from 'react';
 import Divider from "../atoms/Divider";
 import Draggable, {DraggableEventHandler} from 'react-draggable';
 import {interval} from "rxjs";
+import StatusLight from "../atoms/StatusLight";
 
 interface VehicleInfoCardProps {
 
@@ -34,13 +35,13 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
       >
         <div className="p-4 cursor-move">
           <div
-            className="text-gray-50 font-medium"
+            className="text-gray-100 font-medium"
           >
             Thông tin xe
           </div>
         </div>
         <Divider/>
-        <div id="content" className="px-4 py-2 text-gray-100 text-sm h-96 overflow-y-auto">
+        <div id="content" className="px-4 py-2 text-gray-200 text-sm h-96 overflow-y-auto">
           <div className="py-3 px-0.5 flex">
             <span>Lái xe</span>
             <span className="ml-auto">Phan Văn Đức</span>
@@ -82,33 +83,30 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
           </div>
           <Divider/>
           <div className="py-3 px-0.5 flex">
-            <span>Trạng thái</span>
-            <span className="ml-auto flex items-center">
+            <p>Trạng thái</p>
             <div
-              className="h-2 w-2 mr-2 rounded-full bg-gray-500"
-            />
-            Tắt máy
-          </span>
+              className="ml-auto"
+            >
+              <StatusLight>Không hoạt động</StatusLight>
+            </div>
           </div>
           <Divider/>
           <div className="py-3 px-0.5 flex">
-            <span>Trạng thái đồng hồ</span>
-            <span className="ml-auto flex items-center">
+            <p>Trạng thái đồng hồ</p>
             <div
-              className="h-2 w-2 mr-2 rounded-full bg-gray-500"
-            />
-            Không có khách
-          </span>
+              className="ml-auto"
+            >
+              <StatusLight>Không hoạt động</StatusLight>
+            </div>
           </div>
           <Divider/>
           <div className="py-3 px-0.5 flex">
-            <span>Điều hòa</span>
-            <span className="ml-auto flex items-center">
+            <p>Điều hòa</p>
             <div
-              className="h-2 w-2 mr-2 rounded-full bg-gray-500"
-            />
-            Không hoạt động
-          </span>
+              className="ml-auto"
+            >
+              <StatusLight>Không hoạt động</StatusLight>
+            </div>
           </div>
           <Divider/>
           <div className="py-3 px-0.5 flex">
