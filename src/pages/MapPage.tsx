@@ -5,6 +5,8 @@ import {GeolocateControl, NavigationControl} from 'maplibre-gl';
 import Taxi from '../assets/icons/taxi.svg';
 import { useNotifier } from 'react-headless-notifier';
 import VehicleInfoCard from "../components/molecules/VehicleInfoCard";
+import Divider from "../components/atoms/Divider";
+import Location from '../assets/icons/location.svg'
 
 const MapPage = () => {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
@@ -33,6 +35,21 @@ const MapPage = () => {
       >
       </div>
       <div
+        className="absolute w-[32rem] rounded-md h-[28rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-[#0F0D1E] py-4"
+      >
+        <div
+          className="mb-3 relative"
+        >
+          <Location
+            class="absolute fill-gray-400 top-1 left-5"
+            width={16}
+            height={16}
+          />
+          <input className="text-sm outline-none bg-transparent text-gray-200 mx-12" placeholder="Tìm kiếm địa điểm..." type="text"/>
+        </div>
+        <Divider/>
+      </div>
+      <div
         className="flex h-full"
       >
         <div
@@ -44,7 +61,7 @@ const MapPage = () => {
         isVisible={isDrawerVisible}
         onHide={handleHidePanel}
       />
-      <VehicleInfoCard/>
+      {/*<VehicleInfoCard/>*/}
     </>
 
   )

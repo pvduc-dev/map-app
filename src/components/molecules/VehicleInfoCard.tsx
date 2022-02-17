@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useRef, useState} from 'react';
+import React, {FC, useEffect, useMemo, useRef, useState} from 'react';
 import Divider from "../atoms/Divider";
 import Draggable, {DraggableEventHandler} from 'react-draggable';
 import {interval} from "rxjs";
@@ -19,6 +19,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
       sub.unsubscribe();
     }
   }, [])
+
   return (
     <Draggable
       positionOffset={{x: '-50%', y: '-50%'}}
