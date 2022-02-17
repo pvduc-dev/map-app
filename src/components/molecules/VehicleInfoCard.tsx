@@ -34,13 +34,13 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
       >
         <div className="p-4 cursor-move">
           <div
-            className="text-gray-100 font-medium"
+            className="text-gray-50 font-medium"
           >
             Thông tin xe
           </div>
         </div>
         <Divider/>
-        <div id="content" className="px-4 py-2 text-gray-200 text-sm h-96 overflow-y-auto">
+        <div id="content" className="px-4 py-2 text-gray-100 text-sm h-96 overflow-y-auto">
           <div className="py-3 px-0.5 flex">
             <span>Lái xe</span>
             <span className="ml-auto">Phan Văn Đức</span>
