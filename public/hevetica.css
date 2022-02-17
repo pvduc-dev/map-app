@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBold.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBold.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBold.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBold.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-BoldItalic.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-BoldItalic.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-BoldItalic.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Bold.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Bold.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Bold.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Light.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Light.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Light.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Light.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBlack.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBlack.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBlack.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBlack.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-CondensedBlack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Italic.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Italic.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Italic.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Italic.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-LightItalic.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-LightItalic.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-LightItalic.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-LightItalic.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLightItalic.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLightItalic.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLightItalic.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLightItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLight.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLight.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLight.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLight.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-UltraLight.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Medium.eot');
+  src: url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Medium.eot?#iefix') format('embedded-opentype'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Medium.woff2') format('woff2'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Medium.woff') format('woff'),
+  url('https://res.cloudinary.com/pv-duc/raw/upload/v1645108687/fonts/HelveticaNeue/HelveticaNeue-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
