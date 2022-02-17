@@ -6,7 +6,8 @@ import Taxi from '../assets/icons/taxi.svg';
 import { useNotifier } from 'react-headless-notifier';
 import VehicleInfoCard from "../components/molecules/VehicleInfoCard";
 import Divider from "../components/atoms/Divider";
-import Location from '../assets/icons/location.svg'
+import Location from '../assets/icons/location.svg';
+import Search from '../assets/icons/search.svg';
 
 const MapPage = () => {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
@@ -40,12 +41,89 @@ const MapPage = () => {
         <div
           className="mb-3 relative"
         >
-          <Location
+          <Search
             class="absolute fill-gray-400 top-1 left-5"
             width={16}
             height={16}
           />
           <input className="text-sm outline-none bg-transparent text-gray-200 mx-12" placeholder="Tìm kiếm địa điểm..." type="text"/>
+        </div>
+        <Divider/>
+        <div
+          className="relative text-gray-400 p-4 text-sm"
+        >
+          <Location
+            class="absolute fill-gray-400 top-4 left-5"
+            width={16}
+            height={16}
+          />
+          <p className="ml-8">Đường giải phóng</p>
+        </div>
+        <Divider/>
+        <div
+          className="relative text-gray-400 p-4 text-sm"
+        >
+          <Location
+            class="absolute fill-gray-400 top-4 left-5"
+            width={16}
+            height={16}
+          />
+          <p className="ml-8">Đường giải phóng</p>
+        </div>
+        <Divider/>
+        <div
+          className="relative text-gray-400 p-4 text-sm"
+        >
+          <Location
+            class="absolute fill-gray-400 top-4 left-5"
+            width={16}
+            height={16}
+          />
+          <p className="ml-8">Đường giải phóng</p>
+        </div>
+        <Divider/>
+        <div
+          className="relative text-gray-400 p-4 text-sm"
+        >
+          <Location
+            class="absolute fill-gray-400 top-4 left-5"
+            width={16}
+            height={16}
+          />
+          <p className="ml-8">Đường giải phóng</p>
+        </div>
+        <Divider/>
+        <div
+          className="relative text-gray-400 p-4 text-sm"
+        >
+          <Location
+            class="absolute fill-gray-400 top-4 left-5"
+            width={16}
+            height={16}
+          />
+          <p className="ml-8">Đường giải phóng</p>
+        </div>
+        <Divider/>
+        <div
+          className="relative text-gray-400 p-4 text-sm"
+        >
+          <Location
+            class="absolute fill-gray-400 top-4 left-5"
+            width={16}
+            height={16}
+          />
+          <p className="ml-8">Đường giải phóng</p>
+        </div>
+        <Divider/>
+        <div
+          className="relative text-gray-400 p-4 text-sm"
+        >
+          <Location
+            class="absolute fill-gray-400 top-4 left-5"
+            width={16}
+            height={16}
+          />
+          <p className="ml-8">Đường giải phóng</p>
         </div>
         <Divider/>
       </div>
