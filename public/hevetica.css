@@ -7,7 +7,7 @@
   url('/fonts/HelveticaNeue-CondensedBold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   url('/fonts/HelveticaNeue-BoldItalic.ttf') format('truetype');
   font-weight: bold;
   font-style: italic;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -31,7 +31,7 @@
   url('/fonts/HelveticaNeue-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -43,7 +43,7 @@
   url('/fonts/HelveticaNeue-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -55,7 +55,7 @@
   url('/fonts/HelveticaNeue-CondensedBlack.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -67,7 +67,7 @@
   url('/fonts/HelveticaNeue-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -79,7 +79,7 @@
   url('/fonts/HelveticaNeue.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -91,7 +91,7 @@
   url('/fonts/HelveticaNeue-LightItalic.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -103,7 +103,7 @@
   url('/fonts/HelveticaNeue-UltraLightItalic.ttf') format('truetype');
   font-weight: 100;
   font-style: italic;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -115,7 +115,7 @@
   url('/fonts/HelveticaNeue-UltraLight.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
 @font-face {
@@ -127,6 +127,6 @@
   url('/fonts/HelveticaNeue-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 
