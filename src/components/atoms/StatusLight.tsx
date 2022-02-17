@@ -7,7 +7,7 @@ interface StatusLightProps {
 const StatusLight: FC<StatusLightProps> = ({children}) => {
   return (
     <div
-      className="before:content-[''] before:mr-2 before:inline-block before:w-2 before:h-2 before:bg-green-500 before:rounded-full"
+      className="before:content-[''] before:mr-2 before:inline-block before:w-2 before:h-2 before:bg-green-600 before:rounded-full"
     >
       {children}
     </div>
