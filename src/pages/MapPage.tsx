@@ -34,15 +34,6 @@ const MapPage = () => {
     setIsDrawerVisible(true)
   }
 
-  useEffect(() => {
-    map?.easeTo({
-      padding: {
-        left: isDrawerVisible ? 868 : 0
-      },
-      duration: 300
-    })
-  }, [isDrawerVisible])
-
   function moveToLocation(item: any) {
     place$(item.place_id).pipe(
       pluck('response', 'result', 'geometry', 'location')
