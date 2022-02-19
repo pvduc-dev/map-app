@@ -16,7 +16,7 @@ const MapDrawer: FC<MapDrawerProps> = ({isVisible, onHide}) => {
   const { notify } = useNotifier();
   const styles = useSpring({
     config: {
-      duration: 200
+      duration: 300
     },
     left: isVisible ? 0 : -442,
   });

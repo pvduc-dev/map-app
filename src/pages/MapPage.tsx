@@ -8,6 +8,12 @@ import VehicleInfoCard from "../components/molecules/VehicleInfoCard";
 import Divider from "../components/atoms/Divider";
 import Location from '../assets/icons/location.svg';
 import Search from '../assets/icons/search.svg';
+import SearchBox from "../components/molecules/SearchBox";
+import {ajax} from "rxjs/ajax";
+import {pluck} from "rxjs";
+
+const place$ = (val: string) => ajax.get(`https://rsapi.goong.io/Place/Detail?place_id=${val}&api_key=y7ppbuJEqALDVJaIqWltfUODmc5xNgrvMFuhmB67`)
+
 
 const MapPage = () => {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
@@ -21,11 +27,35 @@ const MapPage = () => {
   })
 
   function handleHidePanel() {
-    setIsDrawerVisible(false)
+    setIsDrawerVisible(false);
   }
 
   function handleShowPanel() {
     setIsDrawerVisible(true)
+  }
+
+  useEffect(() => {
+    map?.easeTo({
+      padding: {
+        left: isDrawerVisible ? 442 : 0
+      },
+      duration: 300
+    })
+  }, [isDrawerVisible])
+
+  function moveToLocation(item: any) {
+    place$(item.place_id).pipe(
+      pluck('response', 'result', 'geometry', 'location')
+    ).subscribe(
+      (next) => {
+        console.log(next)
+        map?.jumpTo({
+          // @ts-ignore
+          center: [next.lng, next.lat],
+          zoom: 16,
+        })
+      }
+    )
   }
 
   return (
@@ -35,97 +65,9 @@ const MapPage = () => {
         onClick={handleShowPanel}
       >
       </div>
-      <div
-        className="absolute w-[32rem] rounded-md h-[26.8rem] top-1/3 left-1/2 -translate-x-1/3 -translate-y-1/2 z-50 bg-[#0F0D1E] py-4"
-      >
-        <div
-          className="mb-3 relative"
-        >
-          <Search
-            class="absolute fill-gray-400 top-1 left-5"
-            width={16}
-            height={16}
-          />
-          <input className="text-sm outline-none bg-transparent text-gray-200 mx-12" placeholder="Tìm kiếm địa điểm..." type="text"/>
-        </div>
-        <Divider/>
-        <div
-          className="relative text-gray-400 p-4 text-sm"
-        >
-          <Location
-            class="absolute fill-gray-400 top-4 left-5"
-            width={16}
-            height={16}
-          />
-          <p className="ml-8">Đường giải phóng</p>
-        </div>
-        <Divider/>
-        <div
-          className="relative text-gray-400 p-4 text-sm"
-        >
-          <Location
-            class="absolute fill-gray-400 top-4 left-5"
-            width={16}
-            height={16}
-          />
-          <p className="ml-8">Đường giải phóng</p>
-        </div>
-        <Divider/>
-        <div
-          className="relative text-gray-400 p-4 text-sm"
-        >
-          <Location
-            class="absolute fill-gray-400 top-4 left-5"
-            width={16}
-            height={16}
-          />
-          <p className="ml-8">Đường giải phóng</p>
-        </div>
-        <Divider/>
-        <div
-          className="relative text-gray-400 p-4 text-sm"
-        >
-          <Location
-            class="absolute fill-gray-400 top-4 left-5"
-            width={16}
-            height={16}
-          />
-          <p className="ml-8">Đường giải phóng</p>
-        </div>
-        <Divider/>
-        <div
-          className="relative text-gray-400 p-4 text-sm"
-        >
-          <Location
-            class="absolute fill-gray-400 top-4 left-5"
-            width={16}
-            height={16}
-          />
-          <p className="ml-8">Đường giải phóng</p>
-        </div>
-        <Divider/>
-        <div
-          className="relative text-gray-400 p-4 text-sm"
-        >
-          <Location
-            class="absolute fill-gray-400 top-4 left-5"
-            width={16}
-            height={16}
-          />
-          <p className="ml-8">Đường giải phóng</p>
-        </div>
-        <Divider/>
-        <div
-          className="relative text-gray-400 p-4 text-sm"
-        >
-          <Location
-            class="absolute fill-gray-400 top-4 left-5"
-            width={16}
-            height={16}
-          />
-          <p className="ml-8">Đường giải phóng</p>
-        </div>
-      </div>
+      {/*<SearchBox*/}
+      {/*  moveToLocation={moveToLocation}*/}
+      {/*/>*/}
       <div
         className="flex h-full"
       >
@@ -138,7 +80,7 @@ const MapPage = () => {
         isVisible={isDrawerVisible}
         onHide={handleHidePanel}
       />
-      {/*<VehicleInfoCard/>*/}
+      <VehicleInfoCard/>
     </>
 
   )
