@@ -37,7 +37,7 @@ const MapPage = () => {
   useEffect(() => {
     map?.easeTo({
       padding: {
-        left: isDrawerVisible ? 442 : 0
+        left: isDrawerVisible ? 884 : 0
       },
       duration: 300
     })
