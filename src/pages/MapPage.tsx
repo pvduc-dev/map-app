@@ -37,7 +37,7 @@ const MapPage = () => {
   useEffect(() => {
     map?.easeTo({
       padding: {
-        left: isDrawerVisible ? 884 : 0
+        left: isDrawerVisible ? 868 : 0
       },
       duration: 300
     })
@@ -80,7 +80,7 @@ const MapPage = () => {
         isVisible={isDrawerVisible}
         onHide={handleHidePanel}
       />
-      <VehicleInfoCard/>
+      {/*<VehicleInfoCard/>*/}
     </>
 
   )

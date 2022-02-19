@@ -88,7 +88,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
             <div
               className="ml-auto"
             >
-              <StatusLight>Đang hoạt động</StatusLight>
+              <StatusLight>Đang có khách</StatusLight>
             </div>
           </div>
           <Divider/>
