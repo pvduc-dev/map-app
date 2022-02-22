@@ -17,12 +17,13 @@ const place$ = (val: string) => ajax.get(`https://rsapi.goong.io/Place/Detail?pl
 
 const MapPage = () => {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
-  const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(true);
+  const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const map = useMapbox(mapContainerRef);
 
   map?.once('load', () => {
     setIsDrawerVisible(true)
+    setIsSearchBoxVisible(true)
     map?.addControl(new GeolocateControl({
     }), 'top-right');
   })
