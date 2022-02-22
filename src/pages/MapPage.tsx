@@ -17,6 +17,7 @@ const place$ = (val: string) => ajax.get(`https://rsapi.goong.io/Place/Detail?pl
 
 const MapPage = () => {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
+  const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(true);
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const map = useMapbox(mapContainerRef);
 
@@ -39,7 +40,7 @@ const MapPage = () => {
       pluck('response', 'result', 'geometry', 'location')
     ).subscribe(
       (next) => {
-        console.log(next)
+        setIsSearchBoxVisible(false)
         map?.jumpTo({
           // @ts-ignore
           center: [next.lng, next.lat],
@@ -56,9 +57,10 @@ const MapPage = () => {
         onClick={handleShowPanel}
       >
       </div>
-      {/*<SearchBox*/}
-      {/*  moveToLocation={moveToLocation}*/}
-      {/*/>*/}
+      <SearchBox
+        isVisible={isSearchBoxVisible}
+        moveToLocation={moveToLocation}
+      />
       <div
         className="flex h-full"
       >
