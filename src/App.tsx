@@ -6,30 +6,32 @@ import './style/index.css';
 import { NotifierContextProvider } from 'react-headless-notifier';
 
 ReactDOM.render(
-  <NotifierContextProvider
-    config={{
-      max: 3,
-      duration: 200000,
-      position: 'bottom',
-    }}
-  >
-    <div
-      className="relative w-full h-screen overflow-x-hidden"
+  <React.StrictMode>
+    <NotifierContextProvider
+      config={{
+        max: 3,
+        duration: 200000,
+        position: 'bottom',
+      }}
     >
-      <Router>
-        <Switch>
-          <Route
-            path="/map"
-          >
-            <Routes/>
-          </Route>
-          <Redirect
-            to="/map"
-            from="/"
-          />
-        </Switch>
-      </Router>
-    </div>
-  </NotifierContextProvider>,
+      <div
+        className="relative w-full h-screen overflow-x-hidden"
+      >
+        <Router>
+          <Switch>
+            <Route
+              path="/map"
+            >
+              <Routes/>
+            </Route>
+            <Redirect
+              to="/map"
+              from="/"
+            />
+          </Switch>
+        </Router>
+      </div>
+    </NotifierContextProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 )

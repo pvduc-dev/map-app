@@ -21,11 +21,13 @@ const MapPage = () => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const map = useMapbox(mapContainerRef);
 
-  map?.once('load', () => {
-    setIsDrawerVisible(true)
-    setIsSearchBoxVisible(true)
-    map?.addControl(new GeolocateControl({
-    }), 'top-right');
+  useEffect(() => {
+    map?.current?.once('load', () => {
+      setIsDrawerVisible(true)
+      setIsSearchBoxVisible(true)
+      map?.current?.addControl(new GeolocateControl({
+      }), 'top-right');
+    })
   })
 
   function handleHidePanel() {
@@ -42,7 +44,7 @@ const MapPage = () => {
     ).subscribe(
       (next) => {
         setIsSearchBoxVisible(false)
-        map?.jumpTo({
+        map?.current?.jumpTo({
           // @ts-ignore
           center: [next.lng, next.lat],
           zoom: 16,
@@ -74,10 +76,10 @@ const MapPage = () => {
         isVisible={isDrawerVisible}
         onHide={handleHidePanel}
       />
-      {/*<VehicleInfoCard/>*/}
+      <VehicleInfoCard/>
     </>
 
   )
 };
 
-export default MapPage;
+export default memo(MapPage);

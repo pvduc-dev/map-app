@@ -1,11 +1,11 @@
 import {Map, MapOptions, StyleSpecification} from 'maplibre-gl';
-import {RefObject, useEffect, useState} from "react";
+import {MutableRefObject, RefObject, useEffect, useRef, useState} from "react";
 import '../style/mapbox.css';
 
 type useMapboxType = (
   ref: RefObject<HTMLDivElement>,
   options?: Partial<MapOptions>
-) => Map | undefined;
+) => RefObject<Map | undefined> | undefined;
 
 /**
  * A custom hook for displaying a Mapbox map.
@@ -13,8 +13,7 @@ type useMapboxType = (
  * @param options
  */
 export const useMapbox: useMapboxType = (ref, options = {}) => {
-  const [map, setMap] = useState<Map>();
-
+  const map = useRef<Map>();
   const defaultStyle: StyleSpecification = {
     version: 8,
     sources: {
@@ -40,13 +39,10 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
 
   useEffect(() => {
     const container = ref.current;
-    if (!(container instanceof HTMLDivElement)) {
-      return;
+    if (!(container instanceof HTMLElement)) {
+      throw Error('Map container isn\'t HTMLElement')
     }
-    if (map instanceof Map) {
-      return;
-    }
-    setMap(new Map({
+    map.current = new Map({
       container: container,
       style: defaultStyle,
       center: [
@@ -56,7 +52,10 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
       zoom: 13,
       pitchWithRotate: false,
       ...options,
-    }))
+    })
+    return () => {
+      map.current?.remove();
+    }
   }, [])
   return map;
 }

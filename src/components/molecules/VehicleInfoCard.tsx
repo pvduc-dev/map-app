@@ -10,6 +10,7 @@ interface VehicleInfoCardProps {
 
 const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
   const [nub, setNub] = useState(0);
+  const draggableRef = useRef(null);
 
   useEffect(() => {
     const sub = interval(1000).subscribe((next) => {
@@ -30,8 +31,10 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
         bottom: (window.innerHeight - 442) / 2
       }}
       cancel='#content'
+      nodeRef={draggableRef}
     >
       <div
+        ref={draggableRef}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] bg-[#0F0D1E] z-40 rounded-md"
       >
         <div className="p-4 cursor-move">
