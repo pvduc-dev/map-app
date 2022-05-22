@@ -26,6 +26,7 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
         tileSize: 256,
       }
     },
+    "sprite": "https://openmaptiles.org/sprites/",
     layers: [
       {
         id: 'simple-tiles',

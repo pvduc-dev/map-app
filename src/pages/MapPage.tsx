@@ -28,7 +28,44 @@ const MapPage = () => {
       map?.current?.addControl(new GeolocateControl({
       }), 'top-right');
     })
-  })
+  }, [])
+
+  useEffect(() => {
+    map?.current?.once('load', () => {
+      map?.current?.addSource('gps', {
+        type: 'geojson',
+        data: {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  105.7791084051132,
+                  21.01099448267407
+                ]
+              }
+            }
+          ]
+        }
+      });
+      map?.current?.addLayer({
+        id: 'gps',
+        type: 'symbol',
+        source: 'gps',
+        layout: {
+          'icon-image': 'car',
+          "icon-size": 0.5
+        }
+      });
+      const eventSource = new EventSource('http://localhost:3000/sse');
+      eventSource.onmessage = ({ data }) => {
+        // console.log('New message', JSON.parse(data));
+      };
+    })
+  }, [])
 
   function handleHidePanel() {
     setIsDrawerVisible(false);
