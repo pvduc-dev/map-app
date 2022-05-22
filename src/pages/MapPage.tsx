@@ -60,10 +60,10 @@ const MapPage = () => {
         onClick={handleShowPanel}
       >
       </div>
-      <SearchBox
-        isVisible={isSearchBoxVisible}
-        moveToLocation={moveToLocation}
-      />
+      {/*<SearchBox*/}
+      {/*  isVisible={isSearchBoxVisible}*/}
+      {/*  moveToLocation={moveToLocation}*/}
+      {/*/>*/}
       <div
         className="flex h-full"
       >
@@ -76,7 +76,7 @@ const MapPage = () => {
         isVisible={isDrawerVisible}
         onHide={handleHidePanel}
       />
-      <VehicleInfoCard/>
+      {/*<VehicleInfoCard/>*/}
     </>
 
   )

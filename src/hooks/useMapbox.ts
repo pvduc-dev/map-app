@@ -51,6 +51,7 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
       ],
       zoom: 13,
       pitchWithRotate: false,
+      dragRotate: false,
       ...options,
     })
     return () => {
