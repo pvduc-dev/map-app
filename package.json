@@ -41,6 +41,8 @@
     "@headlessui/react": "^1.4.3",
     "@svgr/webpack": "^6.2.1",
     "@tanem/react-nprogress": "^3.0.79",
+    "@turf/helpers": "^6.5.0",
+    "@turf/transform-translate": "^6.5.0",
     "@types/lodash-es": "^4.17.5",
     "autoprefixer": "^10.4.2",
     "class-transformer": "^0.5.1",

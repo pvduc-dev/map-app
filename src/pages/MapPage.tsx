@@ -10,7 +10,9 @@ import Location from '../assets/icons/location.svg';
 import Search from '../assets/icons/search.svg';
 import SearchBox from "../components/molecules/SearchBox";
 import {ajax} from "rxjs/ajax";
-import {pluck} from "rxjs";
+import {interval, pluck, map as rxMap} from "rxjs";
+import transformTranslate from "@turf/transform-translate";
+import {round} from "@turf/helpers";
 
 const place$ = (val: string) => ajax.get(`https://rsapi.goong.io/Place/Detail?place_id=${val}&api_key=y7ppbuJEqALDVJaIqWltfUODmc5xNgrvMFuhmB67`)
 
@@ -31,39 +33,52 @@ const MapPage = () => {
   }, [])
 
   useEffect(() => {
-    map?.current?.once('load', () => {
+    const point = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              105.7710242,
+              21.01008306
+            ]
+          }
+        }
+      ]
+    }
+    map?.current?.on('load', () => {
       map?.current?.addSource('gps', {
         type: 'geojson',
-        data: {
-          "type": "FeatureCollection",
-          "features": [
-            {
-              "type": "Feature",
-              "properties": {},
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  105.7791084051132,
-                  21.01099448267407
-                ]
-              }
-            }
-          ]
-        }
-      });
-      map?.current?.addLayer({
+        data: point
+      })?.addLayer({
         id: 'gps',
         type: 'symbol',
         source: 'gps',
         layout: {
           'icon-image': 'car',
-          "icon-size": 0.5
+          "icon-size": 0.04,
         }
       });
-      const eventSource = new EventSource('http://localhost:3000/sse');
-      eventSource.onmessage = ({ data }) => {
-        // console.log('New message', JSON.parse(data));
-      };
+    })
+    map?.current?.once('load', () => {
+      setInterval(() => {
+        // @ts-ignore
+        transformTranslate(point, 0.016, 0, { mutate: true, units: 'meters'})
+        // @ts-ignore
+        map?.current?.getSource('gps').setData(point);
+      }, 1)
+    })
+  }, [])
+
+  useEffect(() => {
+    map?.current?.once('load', () => {
+      map?.current?.loadImage('/car.png', (_, img) => {
+        map?.current?.addImage('car', img as HTMLImageElement, {
+        })
+      })
     })
   }, [])
 
