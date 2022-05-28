@@ -26,6 +26,7 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
         tileSize: 256,
       }
     },
+    sprite: 'http://localhost:5001/sprite',
     layers: [
       {
         id: 'simple-tiles',
@@ -49,7 +50,7 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
         105.83112716674805,
         21.03608118311284
       ],
-      zoom: 13,
+      zoom: 15,
       maxZoom: 18,
       pitchWithRotate: false,
       dragRotate: false,

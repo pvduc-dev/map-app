@@ -13,6 +13,7 @@ import {ajax} from "rxjs/ajax";
 import {interval, pluck, map as rxMap} from "rxjs";
 import transformTranslate from "@turf/transform-translate";
 import {round} from "@turf/helpers";
+import {getCoord} from "@turf/invariant";
 
 const place$ = (val: string) => ajax.get(`https://rsapi.goong.io/Place/Detail?place_id=${val}&api_key=y7ppbuJEqALDVJaIqWltfUODmc5xNgrvMFuhmB67`)
 
@@ -58,27 +59,10 @@ const MapPage = () => {
         type: 'symbol',
         source: 'gps',
         layout: {
-          'icon-image': 'car',
-          "icon-size": 0.04,
+          'icon-image': 'car-1',
+          "icon-size": 2.6,
         }
       });
-    })
-    map?.current?.once('load', () => {
-      setInterval(() => {
-        // @ts-ignore
-        transformTranslate(point, 0.016, 0, { mutate: true, units: 'meters'})
-        // @ts-ignore
-        map?.current?.getSource('gps').setData(point);
-      }, 1)
-    })
-  }, [])
-
-  useEffect(() => {
-    map?.current?.once('load', () => {
-      map?.current?.loadImage('/car.png', (_, img) => {
-        map?.current?.addImage('car', img as HTMLImageElement, {
-        })
-      })
     })
   }, [])
 
