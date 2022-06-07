@@ -1,38 +1,10 @@
 const {merge} = require('webpack-merge');
-const common = require('./webpack.common');
-const {dependencies} = require("../package.json");
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const {DefinePlugin} = require('webpack');
-const dotenv = require("dotenv");
+const commonWebpackConfig = require('./webpack.common');
 
-dotenv.config()
-
-module.exports = merge(common, {
+module.exports = merge(commonWebpackConfig, {
   mode: 'development',
   devServer: {
-    port: process.env.PORT ?? 5001,
+    port: 5001,
     historyApiFallback: true,
   },
-  plugins: [
-    new DefinePlugin({
-      'process.env': JSON.stringify(process.env)
-    }),
-    new ModuleFederationPlugin({
-      name: 'app_shell',
-      shared: {
-        react: {
-          singleton: true,
-          requiredVersion: dependencies['react'],
-        },
-        'react-dom': {
-          singleton: true,
-          requiredVersion: dependencies['react-dom'],
-        },
-        'react-router-dom': {
-          singleton: true,
-          requiredVersion: dependencies['react-router-dom'],
-        },
-      },
-    }),
-  ]
 })

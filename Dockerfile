@@ -9,12 +9,18 @@ COPY . ./
 
 RUN yarn run build
 
-FROM nginx:1.17.10-alpine
+FROM nginx
 
 COPY --from=build /app/dist var/www
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-EXPOSE 80
+COPY entrypoint.sh /
 
-ENTRYPOINT ["nginx","-g","daemon off;"]
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["nginx","-g","daemon off;"]
+
+EXPOSE 80

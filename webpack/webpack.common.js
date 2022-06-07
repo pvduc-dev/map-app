@@ -1,6 +1,8 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const path = require("path");
+const {dependencies} = require("../package.json");
 
 module.exports = {
   entry: './src/index.ts',
@@ -43,6 +45,23 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: 'public/index.html',
       favicon: 'public/favicon.ico'
+    }),
+    new ModuleFederationPlugin({
+      name: 'map-app',
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: dependencies['react'],
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: dependencies['react-dom'],
+        },
+        'react-router-dom': {
+          singleton: true,
+          requiredVersion: dependencies['react-router-dom'],
+        },
+      },
     }),
     new CopyPlugin({
       patterns: [

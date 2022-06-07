@@ -1,16 +1,11 @@
 const {merge} = require('webpack-merge');
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const {DefinePlugin} = require('webpack');
-const dotenv = require('dotenv');
 
-dotenv.config()
-
-const common = require('./webpack.common');
-const {dependencies} = require('../package.json')
+const commonWebpackConfig = require('./webpack.common');
 const path = require("path");
 
-module.exports = merge(common, {
+module.exports = merge(commonWebpackConfig, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
@@ -22,28 +17,6 @@ module.exports = merge(common, {
       'process.env': JSON.stringify(process.env)
     }),
     new CleanWebpackPlugin(),
-    new ModuleFederationPlugin({
-      name: 'map',
-      filename: 'js/remoteEntry.js',
-      exposes: {
-        './Routes': './src/components/routes',
-      },
-      shared: {
-        ...dependencies,
-        react: {
-          singleton: true,
-          requiredVersion: dependencies['react'],
-        },
-        'react-dom': {
-          singleton: true,
-          requiredVersion: dependencies['react-dom'],
-        },
-        'react-router-dom': {
-          singleton: true,
-          requiredVersion: dependencies['react-router-dom'],
-        },
-      },
-    }),
   ],
   optimization: {
     splitChunks: {
