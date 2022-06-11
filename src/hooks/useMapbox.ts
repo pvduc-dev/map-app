@@ -21,12 +21,12 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
       rasterTile: {
         type: 'raster',
         tiles: [
-          environment.baseMapTileUrl
+          environment.mapTileUrl
         ],
         tileSize: 256,
       }
     },
-    sprite: 'http://localhost:5001/sprite',
+    sprite: environment.mapSpriteUrl,
     layers: [
       {
         id: 'simple-tiles',

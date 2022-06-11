@@ -1,3 +1,4 @@
 export const environment = {
-  baseMapTileUrl: 'MAP_APP_BASE_MAP_TILE_URL'
+  mapTileUrl: 'MAP_APP_MAP_TILE_URL',
+  mapSpriteUrl: 'MAP_APP_MAP_SPRITE_URL'
 }
