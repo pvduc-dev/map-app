@@ -22,5 +22,7 @@ import Keycloak from "keycloak-js";
 // }).catch(() => {
 //   keycloak.login();
 // })
-
+document.addEventListener('contextmenu', ev => {
+  ev.preventDefault();
+})
 ReactDOM.render(<App/>, document.getElementById('root'))

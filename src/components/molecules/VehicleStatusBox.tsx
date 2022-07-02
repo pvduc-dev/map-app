@@ -24,9 +24,9 @@ const VehicleStatusBox: FC<VehicleStatusBoxProps> = ({isLoading}) => {
           <ContentLoader
             title=""
             speed={3}
-            width={124}
+            width={107}
             height={54}
-            viewBox="0 0 124 54"
+            viewBox="0 0 107 54"
             backgroundColor="#65617C"
             foregroundColor="#0F0D1E"
           >

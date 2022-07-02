@@ -1,7 +1,7 @@
 import {Map, MapOptions, StyleSpecification} from 'maplibre-gl';
 import {RefObject, useEffect, useRef, useState} from "react";
 import '../style/mapbox.css';
-import { environment } from '../environment/environment.prod';
+import { environment } from '../environment/environment';
 
 type useMapboxType = (
   ref: RefObject<HTMLDivElement>,
@@ -15,28 +15,7 @@ type useMapboxType = (
  */
 export const useMapbox: useMapboxType = (ref, options = {}) => {
   const map = useRef<Map>();
-  const defaultStyle: StyleSpecification = {
-    version: 8,
-    sources: {
-      rasterTile: {
-        type: 'raster',
-        tiles: [
-          environment.mapTileUrl
-        ],
-        tileSize: 256,
-      }
-    },
-    sprite: environment.mapSpriteUrl,
-    layers: [
-      {
-        id: 'simple-tiles',
-        type: 'raster',
-        source: 'rasterTile',
-        minzoom: 0,
-        maxzoom: 24
-      }
-    ]
-  };
+  const defaultStyle: string = 'https://tiles.pvduc.dev/dark.json';
 
   useEffect(() => {
     const container = ref.current;

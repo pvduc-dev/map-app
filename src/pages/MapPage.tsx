@@ -3,7 +3,7 @@ import {useMapbox} from "../hooks/useMapbox";
 import MapDrawer from "../components/organisms/MapDrawer";
 import {GeolocateControl, NavigationControl} from 'maplibre-gl';
 import Taxi from '../assets/icons/taxi.svg';
-import { useNotifier } from 'react-headless-notifier';
+import {useNotifier} from 'react-headless-notifier';
 import VehicleInfoCard from "../components/molecules/VehicleInfoCard";
 import Divider from "../components/atoms/Divider";
 import Location from '../assets/icons/location.svg';
@@ -28,8 +28,86 @@ const MapPage = () => {
     map?.current?.once('load', () => {
       setIsDrawerVisible(true)
       setIsSearchBoxVisible(true)
-      map?.current?.addControl(new GeolocateControl({
-      }), 'top-right');
+    })
+
+  }, [])
+
+  useEffect(() => {
+    const size = 50;
+
+// This implements `StyleImageInterface`
+// to draw a pulsing dot icon on the map.
+    const pulsingDot = {
+      width: size,
+      height: size,
+      data: new Uint8Array(size * size * 4),
+
+// When the layer is added to the map,
+// get the rendering context for the map canvas.
+      onAdd: function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = this.width;
+        canvas.height = this.height;
+        // @ts-ignore
+        this.context = canvas.getContext('2d');
+      },
+
+// Call once before every frame where the icon will be used.
+      render: function () {
+        const duration = 1000;
+        const t = (performance.now() % duration) / duration;
+
+        const radius = (size / 2) * 0.3;
+        const outerRadius = (size / 2) * 0.7 * t + radius;
+        // @ts-ignore
+        const context = this.context;
+
+// Draw the outer circle.
+        context.clearRect(0, 0, this.width, this.height);
+        context.beginPath();
+        context.arc(
+          this.width / 2,
+          this.height / 2,
+          outerRadius,
+          0,
+          Math.PI * 2
+        );
+        context.fillStyle = `rgba(0, 191, 255, ${1 - t})`;
+        context.fill();
+
+// Draw the inner circle.
+        context.beginPath();
+        context.arc(
+          this.width / 2,
+          this.height / 2,
+          radius,
+          0,
+          Math.PI * 2
+        );
+        context.fillStyle = 'rgba(0, 191, 255, 1)';
+        context.strokeStyle = 'white';
+        context.lineWidth = 2 + (1 - t);
+        context.fill();
+        context.stroke();
+
+// Update this image's data with data from the canvas.
+        this.data = context.getImageData(
+          0,
+          0,
+          this.width,
+          this.height
+        ).data;
+
+// Continuously repaint the map, resulting
+// in the smooth animation of the dot.
+        map?.current?.triggerRepaint();
+
+// Return `true` to let the map know that the image was updated.
+        return true;
+      }
+    };
+    map?.current?.on('load', () => {
+      map?.current?.addImage('pulsing-dot', pulsingDot, {pixelRatio: 2})
     })
   }, [])
 
@@ -43,8 +121,8 @@ const MapPage = () => {
           "geometry": {
             "type": "Point",
             "coordinates": [
-              105.7710242,
-              21.01008306
+              105.83118736674805,
+              21.03608118311284
             ]
           }
         }
@@ -60,7 +138,8 @@ const MapPage = () => {
         source: 'gps',
         layout: {
           'icon-image': 'car-1',
-          "icon-size": 2.6,
+          "icon-size": 2.8,
+          'icon-rotate': 342
         }
       });
     })
@@ -100,6 +179,10 @@ const MapPage = () => {
       {/*  isVisible={isSearchBoxVisible}*/}
       {/*  moveToLocation={moveToLocation}*/}
       {/*/>*/}
+      <div
+        className="w-80 right-2 top-1.5 rounded-md absolute z-50 h-11 bg-[#0F0D1E]"
+      >
+      </div>
       <div
         className="flex h-full"
       >

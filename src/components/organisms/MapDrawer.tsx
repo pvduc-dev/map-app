@@ -1,10 +1,8 @@
 import React, {FC, memo, useState} from 'react';
 import VehicleStatusBox from "../molecules/VehicleStatusBox";
 import VehicleListItem from "../molecules/VehicleListItem";
-import Left from '../../assets/icons/left.svg';
 import {useSpring, animated} from "react-spring";
 import { useNotifier } from 'react-headless-notifier';
-import SuccessNotification from "./SuccessNotification";
 import Cross from '../../assets/icons/cross.svg';
 
 interface MapDrawerProps {
