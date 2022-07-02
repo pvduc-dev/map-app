@@ -29,6 +29,7 @@ export const useMapbox: useMapboxType = (ref, options = {}) => {
         105.83112716674805,
         21.03608118311284
       ],
+      hash: true,
       zoom: 15,
       maxZoom: 18,
       pitchWithRotate: false,
