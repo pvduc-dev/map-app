@@ -1,6 +1,6 @@
 {
-  "name": "shell-app",
-  "version": "1.0.0",
+  "name": "map-app",
+  "version": "0.15.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
