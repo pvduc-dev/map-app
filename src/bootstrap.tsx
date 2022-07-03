@@ -1,6 +1,6 @@
 import App from './App';
 import React from 'react';
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import Keycloak from "keycloak-js";
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 
@@ -32,8 +32,10 @@ const apolloClient = new ApolloClient({
   cache: new InMemoryCache()
 })
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container as HTMLElement);
+root.render(
   <ApolloProvider client={apolloClient}>
     <App/>
-  </ApolloProvider>,
-  document.getElementById('root'))
+  </ApolloProvider>
+)
