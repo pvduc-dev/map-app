@@ -3,6 +3,7 @@ import Routes from "./components/routes";
 import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
 import './style/index.css';
 import {NotifierContextProvider} from 'react-headless-notifier';
+import {ApolloClient, ApolloProvider} from "@apollo/client";
 
 const App: FC = () => (
   <NotifierContextProvider
