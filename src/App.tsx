@@ -1,36 +1,19 @@
 import React, {FC} from 'react';
-import Routes from "./components/routes";
-import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
+import AppRoutes from "./routes/index";
 import './style/index.css';
-import {NotifierContextProvider} from 'react-headless-notifier';
-import {ApolloClient, ApolloProvider} from "@apollo/client";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 
 const App: FC = () => (
-  <NotifierContextProvider
-    config={{
-      max: 3,
-      duration: 200000,
-      position: 'bottom',
-    }}
+  <div
+    className="relative w-full h-screen overflow-x-hidden"
   >
-    <div
-      className="relative w-full h-screen overflow-x-hidden"
-    >
-      <Router>
-        <Switch>
-          <Route
-            path="/map"
-          >
-            <Routes/>
-          </Route>
-          <Redirect
-            to="/map"
-            from="/"
-          />
-        </Switch>
-      </Router>
-    </div>
-  </NotifierContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/map"/>}/>
+        <Route path="/map/*" element={<AppRoutes/>}/>
+      </Routes>
+    </BrowserRouter>
+  </div>
 )
 
 export default App;
