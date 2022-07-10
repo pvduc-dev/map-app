@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import {useRoutes} from "react-router-dom";
-import MapPage from "../pages/MapPage";
+import "../style/index.css";
+
+const MapPage = lazy(() => import('../pages/MapPage'));
 
 const Router = () => {
   return useRoutes([
     {
       index: true,
-      element: <MapPage/>
+      element:
+        <Suspense fallback={<></>}>
+          <MapPage/>
+        </Suspense>,
     },
   ])
 };

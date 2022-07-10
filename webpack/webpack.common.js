@@ -2,7 +2,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const path = require("path");
-const {dependencies} = require("../package.json");
+const {dependencies, version} = require("../package.json");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.ts',
@@ -29,7 +30,11 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/i,
@@ -47,7 +52,11 @@ module.exports = {
       favicon: 'public/favicon.ico'
     }),
     new ModuleFederationPlugin({
-      name: 'map-app',
+      name: 'MapApp',
+      filename: 'js/remoteEntry.js',
+      exposes: {
+        './Routes': './src/routes/index.tsx'
+      },
       shared: {
         react: {
           singleton: true,
@@ -76,5 +85,8 @@ module.exports = {
         },
       ],
     }),
+    new MiniCssExtractPlugin({
+      chunkFilename: 'css/index.[contenthash:8].css',
+    })
   ],
 }

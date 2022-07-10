@@ -9,6 +9,9 @@ class FancyRoute extends Component<RouteProps> {
       />
     );
   }
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+
+  }
 }
 
 export default FancyRoute;

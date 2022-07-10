@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import AppRoutes from "./routes/index";
-import './style/index.css';
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 
 const App: FC = () => (
