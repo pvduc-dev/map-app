@@ -1,22 +1,34 @@
 const {merge} = require('webpack-merge');
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-const {DefinePlugin} = require('webpack');
+const path = require("path");
 
 const commonWebpackConfig = require('./webpack.common');
-const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(commonWebpackConfig, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
     filename: `js/[name].[contenthash:8].bundle.js`,
-    publicPath: process.env.PUBLIC_PATH ?? '/',
+    publicPath: 'MAP_APP_PUBLIC_PATH',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ],
+      },
+    ],
   },
   plugins: [
-    new DefinePlugin({
-      'process.env': JSON.stringify(process.env)
-    }),
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      chunkFilename: 'css/index.[contenthash:8].css',
+    })
   ],
   optimization: {
     splitChunks: {

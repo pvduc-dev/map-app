@@ -1,9 +1,11 @@
 import React, {useEffect, useState, ChangeEvent, FC} from 'react';
-import Search from "../../assets/icons/search.svg";
-import Divider from "../atoms/Divider";
-import Location from "../../assets/icons/location.svg";
+// @ts-ignore
+import Search from "@/assets/icons/search.svg";
+// @ts-ignore
+import Location from "@/assets/icons/location.svg";
+import Divider from "@/components/atoms/Divider";
 import {ajax} from "rxjs/ajax";
-import {debounceTime, delay, distinctUntilChanged, filter, pluck, skip, Subject, switchMap, throttleTime} from "rxjs";
+import {distinctUntilChanged, filter, pluck, skip, Subject, switchMap, throttleTime} from "rxjs";
 
 const getSuggestLocation = (val: string) => {
   return ajax(`https://rsapi.goong.io/Place/AutoComplete?api_key=y7ppbuJEqALDVJaIqWltfUODmc5xNgrvMFuhmB67&location=21.013715429594125,%20105.79829597455202&input=${val}`)

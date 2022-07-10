@@ -1,8 +1,8 @@
-import React, {FC, useEffect, useMemo, useRef, useState} from 'react';
-import Divider from "../atoms/Divider";
-import Draggable, {DraggableEventHandler} from 'react-draggable';
+import React, {FC, useEffect, useRef, useState} from 'react';
+import Divider from "@/components/atoms/Divider";
+import Draggable from 'react-draggable';
 import {interval} from "rxjs";
-import StatusLight from "../atoms/StatusLight";
+import StatusLight from "@/components/atoms/StatusLight";
 
 interface VehicleInfoCardProps {
 
@@ -22,6 +22,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
   }, [])
 
   return (
+    // @ts-ignore
     <Draggable
       positionOffset={{x: '-50%', y: '-50%'}}
       bounds={{

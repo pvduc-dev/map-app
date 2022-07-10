@@ -1,6 +1,6 @@
 import React, {memo, useEffect, useRef, useState} from 'react';
-import {useMapbox} from "../hooks/useMapbox";
-import MapDrawer from "../components/organisms/MapDrawer";
+import {useMapbox} from "@/hooks/useMapbox";
+import MapDrawer from "@/components/organisms/MapDrawer";
 import {GeolocateControl, NavigationControl} from 'maplibre-gl';
 import Taxi from '../assets/icons/taxi.svg';
 import {useNotifier} from 'react-headless-notifier';

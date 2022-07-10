@@ -1,9 +1,9 @@
-import React, {FC, memo, useState} from 'react';
-import VehicleStatusBox from "../molecules/VehicleStatusBox";
-import VehicleListItem from "../molecules/VehicleListItem";
+import React, {FC} from 'react';
+import VehicleStatusBox from "@/components/molecules/VehicleStatusBox";
+import VehicleListItem from "@/components/molecules/VehicleListItem";
 import {useSpring, animated} from "react-spring";
 import { useNotifier } from 'react-headless-notifier';
-import Cross from '../../assets/icons/cross.svg';
+import Cross from '@/assets/icons/cross.svg';
 
 interface MapDrawerProps {
   isVisible?: boolean;

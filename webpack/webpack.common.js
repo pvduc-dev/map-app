@@ -29,14 +29,6 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
-        ],
-      },
-      {
         test: /\.(png|jpg|gif)$/i,
         type: 'asset/resource'
       },

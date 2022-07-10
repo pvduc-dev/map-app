@@ -1,12 +1,22 @@
 const {merge} = require('webpack-merge');
 const commonWebpackConfig = require('./webpack.common');
-const path = require("path");
 
 module.exports = merge(commonWebpackConfig, {
   mode: 'development',
   output: {
     publicPath: 'http://localhost:5001/',
-    hashFunction: 'xxhash64',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
+        ],
+      },
+    ]
   },
   devServer: {
     port: 5001,
