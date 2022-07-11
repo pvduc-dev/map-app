@@ -26,10 +26,10 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
     <Draggable
       positionOffset={{x: '-50%', y: '-50%'}}
       bounds={{
-        top: -(window.innerHeight - 440) / 2,
+        top: -(window.innerHeight - 510) / 2,
         left: -(window.innerWidth - 460) / 2,
         right: (window.innerWidth - 460) / 2,
-        bottom: (window.innerHeight - 442) / 2
+        bottom: (window.innerHeight - 512) / 2
       }}
       cancel='#content'
       nodeRef={draggableRef}

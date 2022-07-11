@@ -169,7 +169,7 @@ const MapPage = () => {
   }
 
   return (
-    <>
+    <div className="relative w-full flex-auto overflow-hidden">
       <div
         className="absolute w-10 h-10 top-4 left-4 z-20 bg-white rounded-full flex justify-center items-center cursor-pointer"
         onClick={handleShowPanel}
@@ -196,7 +196,7 @@ const MapPage = () => {
         onHide={handleHidePanel}
       />
       <VehicleInfoCard/>
-    </>
+    </div>
 
   )
 };

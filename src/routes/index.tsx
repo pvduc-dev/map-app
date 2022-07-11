@@ -4,7 +4,7 @@ import "../style/index.css";
 
 const MapPage = lazy(() => import('../pages/MapPage'));
 
-const Router = () => {
+const Router = (props: any) => {
   return useRoutes([
     {
       index: true,

@@ -4,7 +4,7 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 
 const App: FC = () => (
   <div
-    className="relative w-full h-screen overflow-x-hidden"
+    className="relative w-screen h-screen flex flex-col overflow-hidden"
   >
     <BrowserRouter>
       <Routes>
