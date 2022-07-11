@@ -10,7 +10,6 @@ module.exports = merge(commonWebpackConfig, {
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
     filename: `js/[name].[contenthash:8].bundle.js`,
-    publicPath: 'MAP_APP_PUBLIC_PATH',
   },
   module: {
     rules: [
