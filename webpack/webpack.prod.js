@@ -29,22 +29,22 @@ module.exports = merge(commonWebpackConfig, {
       chunkFilename: 'css/index.[contenthash:8].css',
     })
   ],
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      cacheGroups: {
-        defaultVendors: {
-          test: /[\\/]node_modules[\\/]/,
-          filename: 'js/[name].[contenthash:8].vendor.js',
-          priority: -10,
-          reuseExistingChunk: true,
-        },
-        default: {
-          filename: 'js/[name].[contenthash:8].chunk.js',
-          priority: -20,
-          reuseExistingChunk: true,
-        },
-      },
-    },
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  //     cacheGroups: {
+  //       defaultVendors: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         filename: 'js/[name].[contenthash:8].vendor.js',
+  //         priority: -10,
+  //         reuseExistingChunk: true,
+  //       },
+  //       default: {
+  //         filename: 'js/[name].[contenthash:8].chunk.js',
+  //         priority: -20,
+  //         reuseExistingChunk: true,
+  //       },
+  //     },
+  //   },
+  // },
 })
