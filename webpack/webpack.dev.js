@@ -18,5 +18,9 @@ module.exports = merge(commonWebpackConfig, {
   devServer: {
     port: 5001,
     historyApiFallback: true,
+    hot: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
 })

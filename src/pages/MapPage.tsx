@@ -195,7 +195,7 @@ const MapPage = () => {
         isVisible={isDrawerVisible}
         onHide={handleHidePanel}
       />
-      {/*<VehicleInfoCard/>*/}
+      <VehicleInfoCard/>
     </>
 
   )

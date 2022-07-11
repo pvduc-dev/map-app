@@ -44,25 +44,28 @@ module.exports = {
       favicon: 'public/favicon.ico'
     }),
     new ModuleFederationPlugin({
-      name: 'MapApp',
+      name: 'map_app',
       filename: 'js/remoteEntry.js',
       exposes: {
         './Routes': './src/routes/index.tsx'
       },
-      // shared: {
-      //   react: {
-      //     singleton: true,
-      //     requiredVersion: dependencies['react'],
-      //   },
-      //   'react-dom': {
-      //     singleton: true,
-      //     requiredVersion: dependencies['react-dom'],
-      //   },
-      //   'react-router-dom': {
-      //     singleton: true,
-      //     requiredVersion: dependencies['react-router-dom'],
-      //   },
-      // },
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: dependencies['react'],
+          eager: true,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: dependencies['react-dom'],
+          eager: true,
+        },
+        'react-router-dom': {
+          singleton: true,
+          requiredVersion: dependencies['react-router-dom'],
+          eager: true
+        },
+      },
     }),
     new CopyPlugin({
       patterns: [
