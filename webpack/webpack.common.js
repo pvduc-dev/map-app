@@ -53,17 +53,17 @@ module.exports = {
         react: {
           singleton: true,
           requiredVersion: dependencies['react'],
-          eager: true,
+          // eager: true,
         },
         'react-dom': {
           singleton: true,
           requiredVersion: dependencies['react-dom'],
-          eager: true,
+          // eager: true,
         },
         'react-router-dom': {
           singleton: true,
           requiredVersion: dependencies['react-router-dom'],
-          eager: true
+          // eager: true
         },
       },
     }),
