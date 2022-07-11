@@ -3,9 +3,6 @@ const commonWebpackConfig = require('./webpack.common');
 
 module.exports = merge(commonWebpackConfig, {
   mode: 'development',
-  output: {
-    publicPath: 'http://localhost:5001/',
-  },
   module: {
     rules: [
       {
