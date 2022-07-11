@@ -11,11 +11,6 @@ module.exports = merge(commonWebpackConfig, {
     path: path.resolve(__dirname, '..', 'dist'),
     // filename: `js/[name].[contenthash:8].bundle.js`,
   },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM'
-  },
   module: {
     rules: [
       {
