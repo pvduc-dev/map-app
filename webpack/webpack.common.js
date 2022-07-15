@@ -2,8 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const path = require("path");
-const {dependencies, version} = require("../package.json");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const {dependencies} = require("../package.json");
 
 module.exports = {
   entry: './src/index.ts',
@@ -64,21 +63,18 @@ module.exports = {
         },
       },
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: "public",
-          globOptions: {
-            ignore: [
-              '**/index.html',
-              '**/favicon.ico'
-            ],
-          }
-        },
-      ],
-    }),
-    new MiniCssExtractPlugin({
-      chunkFilename: 'css/index.[contenthash:8].css',
-    })
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: "public",
+    //       globOptions: {
+    //         ignore: [
+    //           '**/index.html',
+    //           '**/favicon.ico'
+    //         ],
+    //       }
+    //     },
+    //   ],
+    // }),
   ],
 }

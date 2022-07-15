@@ -1,15 +1,16 @@
 const {merge} = require('webpack-merge');
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const {NormalModuleReplacementPlugin} = require('webpack');
 const path = require("path");
 
 const commonWebpackConfig = require('./webpack.common');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(commonWebpackConfig, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
-    // filename: `js/[name].[contenthash:8].bundle.js`,
+    filename: `js/[name].[contenthash:8].bundle.js`,
   },
   module: {
     rules: [
@@ -27,7 +28,11 @@ module.exports = merge(commonWebpackConfig, {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       chunkFilename: 'css/index.[contenthash:8].css',
-    })
+    }),
+    new NormalModuleReplacementPlugin(
+      /@\/environment\/environment/,
+      '@/environment/environment.prod'
+    )
   ],
   // optimization: {
   //   splitChunks: {

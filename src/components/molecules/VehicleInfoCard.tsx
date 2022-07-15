@@ -79,7 +79,7 @@ const VehicleInfoCard: FC<VehicleInfoCardProps> = () => {
           <Divider/>
           <div className="py-3 px-0.5 flex">
             <span>Loại đồng hồ</span>
-            <span className="ml-auto">KNA</span>
+            <span className="ml-auto">NA</span>
           </div>
           <Divider/>
           <div className="py-3 px-0.5 flex">

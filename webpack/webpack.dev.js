@@ -19,8 +19,12 @@ module.exports = merge(commonWebpackConfig, {
     port: 5001,
     historyApiFallback: true,
     hot: true,
+    liveReload: false,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
+  },
+  optimization: {
+    runtimeChunk: 'single'
   },
 })

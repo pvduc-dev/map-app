@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import VehicleStatusBox from "@/components/molecules/VehicleStatusBox";
 import VehicleListItem from "@/components/molecules/VehicleListItem";
 import {useSpring, animated} from "react-spring";
@@ -61,4 +61,4 @@ const MapDrawer: FC<MapDrawerProps> = ({isVisible, onHide}) => {
   );
 };
 
-export default MapDrawer;
+export default memo(MapDrawer);

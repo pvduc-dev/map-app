@@ -1,7 +1,7 @@
-import {Map, MapOptions, StyleSpecification} from 'maplibre-gl';
-import {RefObject, useEffect, useRef, useState} from "react";
-import '../style/mapbox.css';
-import { environment } from '../environment/environment';
+import {Map, MapOptions} from 'maplibre-gl';
+import {RefObject, useEffect, useRef} from "react";
+import '@/style/mapbox.css';
+import { environment } from '@/environment/environment';
 
 type useMapboxType = (
   ref: RefObject<HTMLDivElement>,
@@ -15,7 +15,7 @@ type useMapboxType = (
  */
 export const useMapbox: useMapboxType = (ref, options = {}) => {
   const map = useRef<Map>();
-  const defaultStyle: string = 'https://tiles.pvduc.dev/dark.json';
+  const defaultStyle: string = environment.mapTileUrl;
 
   useEffect(() => {
     const container = ref.current;
