@@ -3,6 +3,7 @@ import {useRoutes} from "react-router-dom";
 import "../style/index.css";
 
 const MapPage = lazy(() => import('../pages/MapPage'));
+const MapPage2 = lazy(() => import('../pages/MapPageV2'));
 
 const Router = (props: any) => {
   return useRoutes([
@@ -10,7 +11,14 @@ const Router = (props: any) => {
       index: true,
       element:
         <Suspense fallback={<></>}>
-          <MapPage/>
+          <MapPage2/>
+        </Suspense>,
+    },
+    {
+      path: '/test',
+      element:
+        <Suspense fallback={<></>}>
+          <MapPage2/>
         </Suspense>,
     },
   ])
