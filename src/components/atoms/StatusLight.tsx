@@ -1,7 +1,6 @@
 import React, {FC, PropsWithChildren} from 'react';
 
 interface StatusLightProps {
-
 }
 
 const StatusLight: FC<PropsWithChildren<StatusLightProps>> = ({children}) => {
