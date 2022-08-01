@@ -33,7 +33,7 @@ const SearchBox: FC<SearchBoxProps> = ({moveToLocation, isVisible}) => {
       distinctUntilChanged(),
       switchMap(value => getSuggestLocation(value)),
       pluck('response'),
-      pluck('predictions'),
+      pluck('predictions')
     ).subscribe(
       next => {
         console.log(next)
