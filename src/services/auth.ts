@@ -1,6 +1,4 @@
-import Keycloak from "keycloak-js";
-import {KeycloakError} from "keycloak-js";
-import {KeycloakPromise} from "keycloak-js";
+import Keycloak, {KeycloakError, KeycloakPromise} from "keycloak-js";
 
 export const auth = new Keycloak({
   url: 'http://localhost:8080',

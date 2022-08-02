@@ -2,7 +2,7 @@ import React from 'react';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import maplibregl from 'maplibre-gl';
 import Map from "react-map-gl";
-import { environment } from '@/environment/environment';
+import {environment} from '@/environment/environment';
 
 const MapPageV2 = () => {
   return (

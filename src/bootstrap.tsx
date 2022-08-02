@@ -1,7 +1,6 @@
 import App from './App';
 import React from 'react';
-import { createRoot } from "react-dom/client";
-import Keycloak from "keycloak-js";
+import {createRoot} from "react-dom/client";
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 
 // const keycloak = new Keycloak({

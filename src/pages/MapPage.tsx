@@ -1,19 +1,9 @@
 import React, {memo, useEffect, useRef, useState} from 'react';
 import {useMapbox} from "@/hooks/useMapbox";
 import MapDrawer from "@/components/organisms/MapDrawer";
-import {GeolocateControl, NavigationControl} from 'maplibre-gl';
-import Taxi from '../assets/icons/taxi.svg';
-import {useNotifier} from 'react-headless-notifier';
 import VehicleInfoCard from "../components/molecules/VehicleInfoCard";
-import Divider from "../components/atoms/Divider";
-import Location from '../assets/icons/location.svg';
-import Search from '../assets/icons/search.svg';
-import SearchBox from "../components/molecules/SearchBox";
 import {ajax} from "rxjs/ajax";
-import {interval, pluck, map as rxMap} from "rxjs";
-import transformTranslate from "@turf/transform-translate";
-import {round} from "@turf/helpers";
-import {getCoord} from "@turf/invariant";
+import {pluck} from "rxjs";
 
 const place$ = (val: string) => ajax.get(`https://rsapi.goong.io/Place/Detail?place_id=${val}&api_key=y7ppbuJEqALDVJaIqWltfUODmc5xNgrvMFuhmB67`)
 

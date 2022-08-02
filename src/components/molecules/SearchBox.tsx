@@ -1,4 +1,4 @@
-import React, {useEffect, useState, ChangeEvent, FC} from 'react';
+import React, {ChangeEvent, FC, useEffect, useState} from 'react';
 // @ts-ignore
 import Search from "@/assets/icons/search.svg";
 // @ts-ignore
@@ -36,7 +36,6 @@ const SearchBox: FC<SearchBoxProps> = ({moveToLocation, isVisible}) => {
       pluck('predictions')
     ).subscribe(
       next => {
-        console.log(next)
         setData(next as any[])
       }
     )
