@@ -63,18 +63,5 @@ module.exports = {
         },
       },
     }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: "public",
-    //       globOptions: {
-    //         ignore: [
-    //           '**/index.html',
-    //           '**/favicon.ico'
-    //         ],
-    //       }
-    //     },
-    //   ],
-    // }),
   ],
 }

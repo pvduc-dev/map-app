@@ -3,6 +3,7 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {NormalModuleReplacementPlugin} = require('webpack');
 const path = require("path");
+const CopyPlugin = require('copy-webpack-plugin');
 
 const commonWebpackConfig = require('./webpack.common');
 
@@ -32,24 +33,37 @@ module.exports = merge(commonWebpackConfig, {
     new NormalModuleReplacementPlugin(
       /@\/environment\/environment/,
       '@/environment/environment.prod'
-    )
+    ),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "public",
+          globOptions: {
+            ignore: [
+              '**/index.html',
+              '**/favicon.ico'
+            ],
+          }
+        },
+      ],
+    }),
   ],
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     cacheGroups: {
-  //       defaultVendors: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //         filename: 'js/[name].[contenthash:8].vendor.js',
-  //         priority: -10,
-  //         reuseExistingChunk: true,
-  //       },
-  //       default: {
-  //         filename: 'js/[name].[contenthash:8].chunk.js',
-  //         priority: -20,
-  //         reuseExistingChunk: true,
-  //       },
-  //     },
-  //   },
-  // },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          filename: 'js/[name].[contenthash:8].vendor.js',
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          filename: 'js/[name].[contenthash:8].chunk.js',
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
 })

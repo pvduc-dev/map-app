@@ -1,6 +1,7 @@
 import React from 'react';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import maplibregl from 'maplibre-gl';
+// @ts-ignore
+import maplibregl from '!maplibre-gl';
 import Map from "react-map-gl";
 import {environment} from '@/environment/environment';
 
