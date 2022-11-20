@@ -1,0 +1,8 @@
+query MyQuery {
+  hero {
+    name
+    friends {
+      name
+    }
+  }
+}

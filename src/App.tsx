@@ -1,6 +1,9 @@
 import React, {FC} from 'react';
 import AppRoutes from "@/routes";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import MyQuery from '@/graphql/MyQuery.graphql';
+
+console.log(MyQuery);
 
 const App: FC = () => (
   <div
