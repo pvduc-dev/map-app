@@ -1,4 +1,6 @@
-FROM node:14.17.6-alpine as build
+FROM node:18-alpine as builder
+
+LABEL stage=builder
 
 WORKDIR /app
 
@@ -10,7 +12,7 @@ COPY . ./
 
 RUN yarn run build
 
-FROM nginx:1.17.10-alpine
+FROM nginx:1.9-alpine
 
 COPY --from=build /app/dist var/www
 

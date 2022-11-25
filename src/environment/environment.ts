@@ -1,3 +1,3 @@
 export const environment = {
-  mapTileUrl: 'https://tiles.pvduc.dev/dark.json'
+  mapTileUrl: 'https://bucolic-cranachan-b10f01.netlify.app/dark.json'
 }
