@@ -14,7 +14,7 @@ const MapPageV2 = () => {
       initialViewState={{
         longitude: 105.86288452148436,
         latitude: 21.016573008161775,
-        zoom: 9
+        zoom: 9,
       }}
     >
     </Map>

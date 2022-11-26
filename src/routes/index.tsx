@@ -2,8 +2,7 @@ import React, {lazy, Suspense} from 'react';
 import {useRoutes} from "react-router-dom";
 import "../style/index.css";
 
-const MapPage = lazy(() => import('../pages/MapPage'));
-const MapPage2 = lazy(() => import('../pages/MapPageV2'));
+const MapPage2 = lazy(() => import('@/pages/MapPageV2'));
 
 const Router = (props: any) => {
   return useRoutes([

@@ -14,7 +14,7 @@ RUN yarn run build
 
 FROM nginx:1.9-alpine
 
-COPY --from=build /app/dist var/www
+COPY --from=builder /app/dist var/www
 
 COPY .nginx/nginx.conf /etc/nginx/nginx.conf
 

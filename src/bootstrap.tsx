@@ -1,5 +1,5 @@
 import App from './App';
-import React from 'react';
+import React, { StrictMode } from 'react';
 import {createRoot} from "react-dom/client";
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 
@@ -35,6 +35,8 @@ const container = document.getElementById('root');
 const root = createRoot(container as HTMLElement);
 root.render(
   <ApolloProvider client={apolloClient}>
-    <App/>
+    <StrictMode>
+      <App/>
+    </StrictMode>
   </ApolloProvider>
 )
