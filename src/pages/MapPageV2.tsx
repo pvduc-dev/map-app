@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'maplibre-gl/dist/maplibre-gl.css';
 // @ts-ignore
 import maplibregl from '!maplibre-gl';
@@ -6,6 +6,9 @@ import Map from "react-map-gl";
 import {environment} from '@/environment/environment';
 
 const MapPageV2 = () => {
+  useEffect(() => {
+    console.log('loaded')
+  }, [])
   return (
     <Map
       reuseMaps

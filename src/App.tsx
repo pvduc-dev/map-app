@@ -8,7 +8,7 @@ console.log(MyQuery);
 const App: FC = () => (
   <div
     className="relative w-screen h-screen flex flex-col overflow-hidden"
-  >
+  >`
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/map"/>}/>
